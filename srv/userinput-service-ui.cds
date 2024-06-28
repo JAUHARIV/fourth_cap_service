@@ -30,7 +30,7 @@ annotate MyService1.Userdet with @(
             {Value: name},
             {Value: surname}
         ],
-         Facets: [                 // for Facets on object page
+         Facets: [                 // for Facets on object page...
             {$Type: 'UI.ReferenceFacet', Label: 'Business Partner Details', Target: '@UI.FieldGroup#Main'},
             {$Type: 'UI.ReferenceFacet', Label: 'Office Details', Target: '@UI.FieldGroup#Office'}
         ],
