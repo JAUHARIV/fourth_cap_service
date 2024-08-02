@@ -7,11 +7,17 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^7",
-    "express": "^4"
+    "express": "^4",
+    "@sap/cds-hana": "^2",
+    "@sap/xssec": "^3"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7",
     "@sap/ux-specification": "^1.120.12"
+  },
+  "engines": {
+    "node": "20"
   },
   "scripts": {
     "start": "cds-serve",
@@ -19,5 +25,24 @@
   },
   "sapux": [
     "app/project1"
-  ]
+  ],
+  "cds": {
+    "requires": {
+      "[production]": {
+        "db": "hana",
+        "auth": "xsuaa"
+      },
+      "auth": {
+        "kind": "mocked",
+        "users": {
+          "Vishal": {
+            "password": "Jauhari",
+            "roles": [
+              "admin"
+            ]
+          }
+        }
+      }
+    }
+  }
 }
